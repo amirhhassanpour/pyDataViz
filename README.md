@@ -5,3 +5,9 @@ Run the following to install:
 ```python
 pip install pyDataViz
 ```
+## Usage
+```python
+from histogram import histogram
+# generate "hi"
+histogram()
+```
