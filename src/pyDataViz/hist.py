@@ -1,13 +1,10 @@
 # the data must be a series and continuous
-def prepForHistogram(data_array, num_digits):
+def prepForHistogram(data_array, num_digits = 0):
     # import data
     import pandas as pd
     import numpy as np
     import matplotlib.pyplot as plt
     import scipy.stats as stats
-
-    # input the data
-    data_array
 
     # describe the data
     print(f'Data description:\n{data_array.describe()}\n')
@@ -39,7 +36,7 @@ def prepForHistogram(data_array, num_digits):
     return data_array
     
 ###############################################################################################################
-def plotHistogram(min_value, max_value, outlier, width, num_digits):
+def plotHistogram(min_value, max_value, outlier, width, figsize = (7, 4), facecolor = "#5790fc", num_digits = 0):
     # create bins
     binSize = (max_value - min_value)/width # change this to another value if need be
     bins = []
@@ -55,8 +52,8 @@ def plotHistogram(min_value, max_value, outlier, width, num_digits):
 
     # create the figure
     # 7 inch the the width of a letter size paper excluding the margins
-    fig, ax = plt.subplots(1,1, figsize = (7, 4)) 
-    ax.bar(x, y, width = 0.8, align = 'center', facecolor = "#5790fc")
+    fig, ax = plt.subplots(1,1, figsize = figsize) 
+    ax.bar(x, y, width = 0.8, align = 'center', facecolor = facecolor)
 
     # figure customization
     ax.set_title('Histogram of ----')
