@@ -8,6 +8,5 @@ pip install pyDataViz
 ## Usage
 ```python
 from pyDataViz import histogram
-# generate "hi"
-histogram.()
+histogram.prepForHistogram(data_array, num_digits = 0)
 ```
