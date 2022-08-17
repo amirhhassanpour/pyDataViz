@@ -7,7 +7,7 @@ pip install pyDataViz
 ```
 ## Usage
 ```python
-from histogram import histogram
+from pyDataViz import histogram
 # generate "hi"
-histogram()
+histogram.()
 ```
