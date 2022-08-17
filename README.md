@@ -13,4 +13,4 @@ histogram.prepForHistogram(data_array, num_digits = 0)
 
 
 
-Follow Amir on [twitter](https://twitter.com/PersonOnBicycle).
+Follow Amir on [Twitter](https://twitter.com/PersonOnBicycle).
