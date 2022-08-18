@@ -34,7 +34,8 @@ def prepForHistogram(data_array, num_digits = 0):
     return data_array
     
 ###############################################################################################################
-def plotHistogram(min_value, max_value, outlier, width, figsize = (7, 4), facecolor = "#5790fc", num_digits = 0):
+def plotHistogram(data_array, min_value, max_value, outlier, width, 
+                  figDetails = {'figsize': (7, 4), 'facecolor': "#5790fc", 'title': 'Histogram', 'xlabel': 'Seconds', 'ylabel': 'Frequency'}, num_digits = 0):
     # import packages
     import numpy as np
     import matplotlib.pyplot as plt
@@ -54,13 +55,13 @@ def plotHistogram(min_value, max_value, outlier, width, figsize = (7, 4), faceco
 
     # create the figure
     # 7 inch the the width of a letter size paper excluding the margins
-    fig, ax = plt.subplots(1,1, figsize = figsize) 
+    fig, ax = plt.subplots(1,1, figsize = figDetails['figsize']) 
     ax.bar(x, y, width = 0.8, align = 'center', facecolor = facecolor)
 
     # figure customization
-    ax.set_title('Histogram of ----')
-    ax.set_xlabel('Seconds')
-    ax.set_ylabel('Frequency')
+    ax.set_title(figDetails['title'])
+    ax.set_xlabel(figDetails['xlabel'])
+    ax.set_ylabel(figDetails['ylabel'])
     ax.set_xticks([i/width for i in bins])
     ax.set_xticklabels(binTickLabels, rotation = 45, ha = 'right')
     #ax.set_xlim(0, 1000)
