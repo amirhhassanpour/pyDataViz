@@ -35,7 +35,11 @@ def prepForHistogram(data_array, num_digits = 0):
     
 ###############################################################################################################
 def plotHistogram(data_array, min_value, max_value, outlier, width, 
-                  figDetails = {'figsize': (7, 4), 'facecolor': "#5790fc", 'title': 'Histogram', 'xlabel': 'Seconds', 'ylabel': 'Frequency'}, num_digits = 0):
+                  figDetails = {'figsize': (7, 4), 
+                                'facecolor': "#5790fc", 
+                                'title': 'Histogram', 
+                                'xlabel': 'Seconds', 
+                                'ylabel': 'Frequency'}, num_digits = 0):
     # import packages
     import numpy as np
     import matplotlib.pyplot as plt
@@ -56,7 +60,7 @@ def plotHistogram(data_array, min_value, max_value, outlier, width,
     # create the figure
     # 7 inch the the width of a letter size paper excluding the margins
     fig, ax = plt.subplots(1,1, figsize = figDetails['figsize']) 
-    ax.bar(x, y, width = 0.8, align = 'center', facecolor = facecolor)
+    ax.bar(x, y, width = 0.8, align = 'center', facecolor = figDetails['facecolor'])
 
     # figure customization
     ax.set_title(figDetails['title'])
