@@ -1,9 +1,7 @@
 # the data must be a series and continuous
 def prepForHistogram(data_array, num_digits = 0):
-    # import data
-    import pandas as pd
+    # import packages
     import numpy as np
-    import matplotlib.pyplot as plt
     import scipy.stats as stats
 
     # describe the data
@@ -37,6 +35,10 @@ def prepForHistogram(data_array, num_digits = 0):
     
 ###############################################################################################################
 def plotHistogram(min_value, max_value, outlier, width, figsize = (7, 4), facecolor = "#5790fc", num_digits = 0):
+    # import packages
+    import numpy as np
+    import matplotlib.pyplot as plt
+    
     # create bins
     binSize = (max_value - min_value)/width # change this to another value if need be
     bins = []
