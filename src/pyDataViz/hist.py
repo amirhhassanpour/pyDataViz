@@ -15,11 +15,12 @@ def prepForHistogram(data_array, num_digits = 0):
         print(f'Are there any outliers in the data? Yes, there are {len(outliers)} outliers.')
         print(f'The outliers are on average {round(np.absolute(outliers).mean(),1)} standard deviations away.\n')
         minWithin6std = np.floor(min(data_array[zscores>-3]))
-        print(f'Minimum value in the data excluding the outliers is: {minWithin6std}')
         maxWithin6std = np.ceil(max(data_array[zscores<3]))
-        print(f'Maximum value in the data excluding the outliers is: {maxWithin6std}')
+        print(f'Maximum and minimum value in the data excluding the outliers is: {maxWithin6std} and {minWithin6std}')
     else:
         print(f'Are there any outliers in the data? No, there are no outliers.\n')
+        minWithin6std = min(data_array)
+        maxWithin6std = max(data_array)
 
     # calculate the proposed bin size based on Sturge’s rule 
     # use this value as a rule of thumb 
