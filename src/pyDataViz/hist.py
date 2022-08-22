@@ -47,10 +47,12 @@ def plotHistogram(data_array, min_value, max_value, outlier, width,
     # create bins
     binSize = (max_value - min_value)/width # change this to another value if need be
     bins = []
-    for i in range(0, int(binSize + 1)):
-        bins = bins + [min_value + i*width]
+    for i in range(0, int(binSize)):
+        bins += [min_value + i*width]
     binTickLabels = [f'[{i},{i+width})' for i in bins]
-    binTickLabels[-1] = binTickLabels[-1].split(',')[0] + ',' + str(round(outlier)) + ')'
+    if outlier != False:
+        bins += [max_value + i*width]
+        binTickLabels += [f'[{max_value},{outlier})']
 
     # plot the figure
     y, x = np.histogram(data_array,bins=bins)
