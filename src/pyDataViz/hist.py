@@ -49,8 +49,8 @@ def plotHistogram(data_array, min_value, max_value, outlier, width,
     for i in range(0, int(binSize)):
         bins += [min_value + i*width]
     binTickLabels = [f'[{i},{i+width})' for i in bins]
-    if outlier != False:
-        bins += [max_value + i*width]
+    if outlier == True:
+        bins += [max_value + width]
         binTickLabels += [f'[{max_value},{outlier})']
 
     # plot the figure
